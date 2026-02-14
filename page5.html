@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+  text-align:center;
+  font-family:Arial;
+  background:linear-gradient(to right,#ffd6e7,#ffe6f0);
+  margin-top:100px;
+  overflow:hidden;
+}
+h1{color:#ff3399;font-size:40px;}
+.heart{
+  position:absolute;
+  color:#ff66b2;
+  font-size:20px;
+  animation:float 5s linear infinite;
+}
+@keyframes float{
+  0%{transform:translateY(100vh);}
+  100%{transform:translateY(-10vh);}
+}
+</style>
+</head>
+<body>
+
+<h1>I Choose You. Always. 💍💖</h1>
+<h2>I Love You So Much 💕</h2>
+
+<script>
+setInterval(function(){
+  var heart=document.createElement("div");
+  heart.className="heart";
+  heart.style.left=Math.random()*100+"vw";
+  heart.innerHTML="💗";
+  document.body.appendChild(heart);
+  setTimeout(function(){heart.remove();},5000);
+},300);
+</script>
+
+</body>
+</html>
