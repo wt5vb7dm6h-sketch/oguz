@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Valentine 💖</title>
+
+<style>
+body{
+  text-align:center;
+  font-family:Arial;
+  background:#ffe6f0;
+  margin-top:100px;
+  overflow:hidden;
+}
+
+h1{color:#ff3399;}
+
+button{
+  padding:15px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:15px;
+  background:#ff66b2;
+  color:white;
+  cursor:pointer;
+}
+
+.heart{
+  position:absolute;
+  font-size:20px;
+  animation:fall 3s linear forwards;
+}
+
+@keyframes fall{
+  0%{
+    transform:translateY(-10vh) scale(1);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(100vh) scale(1.5);
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Will You Be My Valentine? 💖</h1>
+
+<button onclick="yesClick()">Yes 💘</button>
+
+<script>
+function yesClick(){
+
+  // Kalp patlaması
+  for(let i=0;i<40;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="💗";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*2+2)+"s";
+    document.body.appendChild(heart);
+
+    setTimeout(function(){
+      heart.remove();
+    },3000);
+  }
+
+  // 2 saniye sonra diğer sayfaya geç
+  setTimeout(function(){
+    window.location.href="page2.html";
+  },2000);
+}
+</script>
+
+</body>
+</html>
